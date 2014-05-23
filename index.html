@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<title>Git repo test</title>
+
+</head>
+<body style="padding:0px; margin:0px;">
+
+<script type="text/javascript">
+
+
+	$(document).ready(function(){
+		
+		var wh = $(window).innerHeight();
+		var ww = $(window).innerWidth()
+		
+		$('<div>').attr({'id' : 'fullscreen'}).css({'height' : wh+'px', 'width' : ww+'px',
+			'background-color' : 'black', 'position' : 'relative'})
+		.appendTo('body');
+		
+		var oh = Math.floor(wh/2);
+		var ow = Math.floor(ww/2);
+		var ot = Math.floor((wh - oh)/2);
+		var ol = Math.floor((ww - ow)/2);
+		
+		$('<div>').attr({'id' : 'overlay'}).css({'height' : oh+'px', 'width' : ow+'px',
+			'background-color' : 'white', 'position' : 'absolute', 'top' : ot+'px', 'left' : ol+'px'})
+		.appendTo('body');
+		
+		$('<h1>').attr({'id' : 'test_text'}).css({'color' : 'blue', 'font-family' : 'sans-serif', 'position' : 'absolute', 'padding' : '0px', 'margin' : '0px'})
+		.html('This is a test')
+		.appendTo('#overlay');
+		
+		var th = $('#test_text').height();
+		var tw = $('#test_text').width();
+		var tt = Math.floor((oh - th)/2);
+		var tl = Math.floor((ow - tw)/2);
+		
+		$('#test_text').css({'top' : tt+'px', 'left' : tl+'px'});
+		
+	});
+	
+</script>
+
+</body>
+</html>
